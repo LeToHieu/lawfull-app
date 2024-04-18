@@ -27,5 +27,5 @@ doc/api/
 .flutter-plugins-dependencies
 node_modules
 
-Server\phapdien_data\crawdata
-Server\BoPhapDienDienTu
+Server/phapdien_data/crawdata
+Server/BoPhapDienDienTu
