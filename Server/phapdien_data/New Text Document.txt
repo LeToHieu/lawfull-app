@@ -1,0 +1,50 @@
+error  RateLimitError: 429 Rate limit reached for text-embedding-ada-002 in organization org-YoC4ApR99XTCeZvLFwzGg5kz on requests per min (RPM): Limit 3, Used 3, Requested 1. Please try again in 20s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.
+    at APIError.generate (C:\Aptech\RealProject4\Server\node_modules\openai\error.js:63:20)
+    at OpenAI.makeStatusError (C:\Aptech\RealProject4\Server\node_modules\openai\core.js:263:33)
+    at OpenAI.makeRequest (C:\Aptech\RealProject4\Server\node_modules\openai\core.js:306:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Aptech\RealProject4\Server\node_modules\@langchain\openai\dist\embeddings.cjs:264:29
+    at async RetryOperation._fn (C:\Aptech\RealProject4\Server\node_modules\p-retry\index.js:50:12) {
+  status: 429,
+  headers: {
+    'alt-svc': 'h3=":443"; ma=86400',
+    'cf-cache-status': 'DYNAMIC',
+    'cf-ray': '87664fc7297b5de1-HKG',
+    connection: 'keep-alive',
+    'content-length': '502',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Thu, 18 Apr 2024 17:18:01 GMT',
+    'retry-after': '20',
+    'retry-after-ms': '20000',
+    server: 'cloudflare',
+    'set-cookie': '__cf_bm=N_ECFOKcr0JxEDRPZYCIniV1Djy13tsDXEp6U13XUQw-1713460681-1.0.1.1-Xso4c0pQGGpAN79bXFA._4Qu.EpfwgnRVpvE0_bltUKXGI87WE25FpKoeUpjzV6JN3.a7VOXcAsvUgexAsRlNA; path=/; expires=Thu, 18-Apr-24 17:48:01 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=Du3sKIZotmjuW8N7kqWFbSbxiIzne1T6gKquo3YUQpI-1713460681325-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=15724800; includeSubDomains',
+    vary: 'Origin',
+    'x-ratelimit-limit-requests': '200',
+    'x-ratelimit-remaining-requests': '0',
+    'x-ratelimit-reset-requests': '23h54m32.433s',
+    'x-request-id': 'req_6d0c24a720c41aea19f51a449bc5663e'
+  },
+  request_id: 'req_6d0c24a720c41aea19f51a449bc5663e',
+  error: {
+    message: 'Rate limit reached for text-embedding-ada-002 in organization org-YoC4ApR99XTCeZvLFwzGg5kz on requests per min (RPM): Limit 3, Used 3, Requested 1. Please try again in 20s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.',
+    type: 'requests',
+    param: null,
+    code: 'rate_limit_exceeded'
+  },
+  code: 'rate_limit_exceeded',
+  param: null,
+  type: 'requests',
+  attemptNumber: 7,
+  retriesLeft: 0
+}
+C:\Aptech\RealProject4\Server\ai_hander\lib\vector_store.js:18
+    throw new Error('Failed to load your docs !');
+          ^
+
+Error: Failed to load your docs !
+    at embedAndStoreDocs (C:\Aptech\RealProject4\Server\ai_hander\lib\vector_store.js:18:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Aptech\RealProject4\Server\ai_hander\script\pinecone_embed_doc.js:20:7
+
+Node.js v20.11.1

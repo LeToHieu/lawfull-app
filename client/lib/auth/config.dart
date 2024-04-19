@@ -6,3 +6,4 @@ final DE_MUC_URL = URL + "DeMuc";
 final CAC_CHUONG_URL = URL + "CacChuong";
 final CAC_DIEU_URL = URL + "CacDieu";
 final CHI_TIET_URL = URL + "ChiTiet";
+final CHAT_URL = URL + "chat";

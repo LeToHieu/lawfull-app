@@ -1,10 +1,16 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ChatWidget extends StatelessWidget {
   final String msg;
+  final bool loading;
   final int chatIndex;
-  const ChatWidget({super.key, required this.msg, required this.chatIndex});
+  const ChatWidget(
+      {super.key,
+      required this.msg,
+      required this.chatIndex,
+      required this.loading});
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +42,23 @@ class ChatWidget extends StatelessWidget {
                 ),
                 SizedBox(width: 8),
                 Expanded(
-                  child: Text(
-                    msg,
-                    style: TextStyle(fontSize: 18),
-                  ),
-                )
+                    child: chatIndex == 0 || !loading
+                        ? Text(
+                            msg,
+                            style: TextStyle(fontSize: 18),
+                          )
+                        : DefaultTextStyle(
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400),
+                            child: AnimatedTextKit(
+                                isRepeatingAnimation: false,
+                                repeatForever: false,
+                                displayFullTextOnTap: true,
+                                totalRepeatCount: 1,
+                                animatedTexts: [TyperAnimatedText(msg.trim())]),
+                          )),
               ],
             ),
           ),
